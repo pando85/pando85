@@ -30,7 +30,6 @@ jobs:
           plugin_notable: yes
           plugin_notable_from: all
           plugin_notable_repositories: yes
-          plugin_notable_indepth: yes
           config_timezone: "Europe/Madrid"
           plugin_isocalendar: yes
           plugin_isocalendar_duration: half-year
