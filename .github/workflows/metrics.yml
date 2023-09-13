@@ -31,10 +31,4 @@ jobs:
           markdown: TEMPLATE.md
           filename: README.md
           plugin_activity: yes
-          plugin_stargazers: yes
-          plugin_notable: yes
-          plugin_contributors: yes
-          plugin_contributors_contributions: yes
-          config_timezone: "Europe/Madrid"
-          plugin_isocalendar: yes
-          plugin_isocalendar_duration: half-year
+
