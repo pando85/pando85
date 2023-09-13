@@ -29,6 +29,7 @@ jobs:
           token: ${{ secrets.METRICS_TOKEN }}
           plugin_stargazers: yes
           plugin_notable: yes
+          plugin_contributors: yes
           config_timezone: "Europe/Madrid"
           plugin_isocalendar: yes
           plugin_isocalendar_duration: half-year
