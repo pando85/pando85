@@ -1,11 +1,13 @@
 ---
 name: Metrics
 "on":
-  schedule: [{cron: "0 0 * * *"}]
+  # schedule:
+  #   - cron: "0 0 * * *"
   workflow_dispatch:
   push:
     branches:
-        - "main"
+      - main
+      - '**'
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -25,23 +27,9 @@ jobs:
       - uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.METRICS_TOKEN }}
-  iso_calendar:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-    steps:
-      - uses: lowlighter/metrics@latest
-        with:
-          filename: iso_calendar.svg
-          # You'll need to setup a personal token in your secrets.
-          token: ${{ secrets.METRICS_TOKEN }}
-          # GITHUB_TOKEN is a special auto-generated token used for commits
-          committer_token: ${{ github.token }}
-
-          # Options
-          user: pando85
-          template: classic
-          base: ""
+          plugin_notable: yes
+          plugin_notable_from: all
+          plugin_notable_repositories: yes
           config_timezone: "Europe/Madrid"
           plugin_isocalendar: yes
           plugin_isocalendar_duration: half-year
